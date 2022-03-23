@@ -32,21 +32,21 @@ class _statesearchState extends State<statesearch> {
     suggest = 'Enter the full name of your college/board';
 
     firestore
-        .collectionGroup('schemes')
-        .where('dt',isEqualTo: checkme)
+        .collection('states')
+        .doc('CgccIfKgjh277dtO4JZM')
         .get()
-        .then((QuerySnapshot querySnapshot) => {
-      querySnapshot.docs.forEach((doc) async {
-        list.add(doc);
-
-        setState(() {
-          newlist = List.from(list);
-          print(newlist);
-        });
-
-      }),
-    }).catchError((onError){
-      print(onError);
+        .then((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.exists) {
+        list=documentSnapshot['statename'];
+        print(list);
+      }
+      setState(() {
+        newlist = List.from(list);
+        print(newlist);
+      });
+    })
+        .catchError((error){
+      print(error);
     });
   }
 
