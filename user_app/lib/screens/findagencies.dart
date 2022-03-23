@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:user_app/displayAllData.dart';
+import 'package:user_app/screens/displayAllData.dart';
 import 'package:user_app/screens/search.dart';
 import 'package:user_app/screens/searchdisability.dart';
 import 'package:user_app/screens/utstatessearch.dart';
