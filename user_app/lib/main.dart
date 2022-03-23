@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:user_app/screens/dashbord.dart';
 import 'package:user_app/screens/docs_input.dart';
+import 'package:user_app/screens/findagencies.dart';
+import 'package:user_app/screens/profile.dart';
 import 'package:user_app/screens/splash_screen.dart';
+import 'package:user_app/screens/udid_details.dart';
 
 import 'screens/sign_in_page.dart';
 
@@ -25,9 +28,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.amber,
-        ),
-        home: SignInPage());
+        home: MyProfile());
   }
 }

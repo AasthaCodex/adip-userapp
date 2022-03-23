@@ -9,13 +9,12 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.amber[400],
+        backgroundColor: const Color(0xfffff3e9),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 100),
               Image.asset(
                 'assets/images/home.png',
               ),
@@ -27,6 +26,9 @@ class SignInPage extends StatelessWidget {
                       fontSize: 25,
                       color: Colors.red[900],
                       fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 50,
+              ),
               SignInButton(),
             ],
           ),
