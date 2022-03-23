@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:user_app/screens/search.dart';
+import 'package:user_app/utils/search.dart';
 
 class FindAgencies extends StatefulWidget {
   const FindAgencies({Key? key}) : super(key: key);
