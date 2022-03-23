@@ -5,6 +5,8 @@ import 'package:user_app/screens/dashbord.dart';
 import 'package:user_app/screens/docs_input.dart';
 import 'package:user_app/screens/splash_screen.dart';
 
+import 'screens/sign_in_page.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -26,6 +28,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.amber,
         ),
-        home: Dashboard());
+        home: SignInPage());
   }
 }
