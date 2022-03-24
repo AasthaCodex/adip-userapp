@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:user_app/screens/displayAllData.dart';
 
 import '../utils/colors.dart';
+import '../widgets/docs_input.dart';
 import 'findagencies.dart';
 
 class UdidDetails extends StatefulWidget {
@@ -74,10 +75,10 @@ class _UdidDetailsState extends State<UdidDetails> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => FindAgencies()),
+                            MaterialPageRoute(builder: (context) => DocsInputPage()),
                           );
                         },
-                        child: const Text('Filter Data', style: TextStyle(
+                        child: const Text('Add UDID', style: TextStyle(
                             fontSize: 20
                         ),),
                       ),

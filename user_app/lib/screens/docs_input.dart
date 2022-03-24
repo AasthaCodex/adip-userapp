@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:user_app/screens/dashbord.dart';
+import 'package:user_app/screens/findagencies.dart';
 import 'package:user_app/utils/colors.dart';
 
 import '../resources/auth_methods.dart';
@@ -124,18 +125,29 @@ class _DocsInputPageState extends State<DocsInputPage> {
                                     color: primaryColor,
                                   ),
                                 )
-                              : const Text('add details'),
-                          width: double.infinity,
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          decoration: const ShapeDecoration(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(4))),
-                              color: blueColor),
-                        ),
-                      ),
-                    ],
+                              : Padding(
+                            padding: EdgeInsets.fromLTRB(30, 40, 30, 10),
+                            child: OutlinedButton(
+                              style: ButtonStyle(
+                                side: MaterialStateProperty.all(BorderSide(color: Colors.deepOrange)),
+                                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+                                shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                                minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)),
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => FindAgencies()),
+                                );
+                              },
+                              child: const Text('Add Details', style: TextStyle(
+                                  fontSize: 20
+                              ),),
+                            ),
+                          ),
+                        )
+                      )],
                   ),
                 ),
               ),
