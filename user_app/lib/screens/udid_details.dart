@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:user_app/screens/displayAllData.dart';
 
 import '../utils/colors.dart';
+import 'findagencies.dart';
 
 class UdidDetails extends StatefulWidget {
   const UdidDetails({Key? key}) : super(key: key);
@@ -59,14 +61,27 @@ class _UdidDetailsState extends State<UdidDetails> {
                               color: primaryColor,
                             ),
                           )
-                        : const Text('Next'),
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.symmetric(vertical: 12),
-                    decoration: const ShapeDecoration(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(4))),
-                        color: Color(0xffFDA758)),
+                        : Padding(
+                      padding: EdgeInsets.fromLTRB(30, 40, 30, 10),
+                      child: OutlinedButton(
+                        style: ButtonStyle(
+                          side: MaterialStateProperty.all(BorderSide(color: Colors.deepOrange)),
+                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors.deepOrange),
+                          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                          minimumSize: MaterialStateProperty.all(Size(double.infinity, 50)),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => FindAgencies()),
+                          );
+                        },
+                        child: const Text('Filter Data', style: TextStyle(
+                            fontSize: 20
+                        ),),
+                      ),
+                    ),
                   )
                 ])
               ],

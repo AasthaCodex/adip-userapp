@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, unnecessary_new
 
 import 'package:flutter/material.dart';
+import 'package:user_app/screens/udid_details.dart';
 
 import '../resources/auth_methods.dart';
 
@@ -21,8 +22,13 @@ class SignInButton extends StatelessWidget {
                 primary: Color(0xff4285F4),
                 padding: EdgeInsets.all(2),
               ),
-              onPressed: () {
+              onPressed: () async {
                 AuthMethods().signInWithGoogle();
+                await Future.delayed(const Duration(milliseconds: 5000));
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => UdidDetails()),
+                );
               },
               child: new Row(
                 children: <Widget>[
